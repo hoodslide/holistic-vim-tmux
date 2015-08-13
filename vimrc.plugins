@@ -1,0 +1,130 @@
+" ========== PLUGINS
+
+filetype off
+
+let g:vundle_default_git_proto = 'git'
+set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+
+Plugin 'taglist.vim'
+  let Tlist_WinWidth = 30
+  let Tlist_Use_Right_Window = 1
+  let Tlist_Exit_OnlyWindow = 1
+  let Tlist_Auto_Open = 0
+  let Tlist_Show_One_File = 0
+
+Plugin 'amirh/HTML-AutoCloseTag'
+
+Plugin 'bling/vim-airline'
+  " let g:airline#extensions#branch#enabled = 0
+  let g:airline#extensions#branch#displayed_head_limit = 10
+  let g:airline_section_y = ''
+  let g:airline_theme = 'wombat'
+  " Show buffers in tabline when only 1 tab. Problematic.
+  " let g:airline#extensions#tabline#enabled = 1
+
+
+
+Plugin 'edkolev/tmuxline.vim'
+  " \'w'    : '#(git branch | cut -f2 -d" " | head -1)',
+  let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '%a %b %e',
+      \'y'    : '%R',
+      \'z'    : '#h',
+      \'options' : {'status-justify' : 'left'}}
+
+Plugin 'gregsexton/MatchTag'
+Plugin 'matchit.zip'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'taiansu/nerdtree-ag'
+
+Plugin 'szw/vim-ctrlspace'
+  let g:ctrlspace_load_last_workspace_on_start = 1
+  let g:ctrlspace_save_workspace_on_exit = 1
+  " TODO: soft-link .tmp to gig/config/vim, for sharing workspaces
+  let g:ctrlspace_project_root_markers = [".tmp", ".git"]
+  let g:airline_exclude_preview = 1
+  if executable("ag")
+    let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
+  endif
+  " let g:ctrlspace_ignored_files = '\v(tmp|temp)[\/]'
+
+Plugin 'szw/vim-maximizer.git'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+
+" Extend 'repeat-last-command' courtesy to plugins
+Plugin 'tpope/vim-repeat'
+
+Plugin 'airblade/vim-gitgutter'
+
+" Dash Docs
+Plugin 'rizzatti/dash.vim'
+
+" Syntax plugins
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'jQuery'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'jiangmiao/simple-javascript-indenter'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/html5-syntax.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'puppetlabs/puppet-syntax-vim'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+
+Plugin 'flazz/vim-colorschemes'
+
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" :Gist to create a gist of the current buffer. Need to set up!
+" -p for private, -a anonymous, -s description
+" Plugin 'mattn/webapi-vim'
+" Plugin 'mattn/gist-vim'
+  " gist.vim will copy the gist code with option '-c'.
+"   let g:gist_clip_command = 'pbcopy'
+"   let g:gist_detect_filetype = 1
+"   let g:gist_open_browser_after_post = 1
+"   let g:gist_post_private = 1
+"   let g:gist_api_url='https://gh.leapfrogonline.com'
+
+
+" Run ruby tests with ,r (all) or ,R (current test)
+" Plugin 'skalnik/vim-vroom'
+Plugin 'janx/vim-rubytest'
+  let g:rubytest_in_quickfix = 1
+  " let g:rubytest_cmd_test = "ruby %p"
+  " let g:rubytest_cmd_testcase = "ruby %p -n '/%c/'"
+  " let g:rubytest_cmd_spec = "bundle exec rspec -f specdoc %p"
+  " let g:rubytest_cmd_example = "bundle exec rspec -f specdoc %p -e '%c'"
+  " let g:rubytest_cmd_feature = "bundle exec cucumber %p"
+  " let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
+
+
+" Plugin 'Raimondi/delimitMate'
+" Plugin 'Shougo/neocomplcache.vim'
+" Plugin 'airblade/vim-rooter'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'vim-scripts/Align'
+" Plugin 'yaifa.vim'
+
+
+call vundle#end()
+filetype plugin indent on
+
+
+

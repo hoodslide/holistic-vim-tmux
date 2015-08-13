@@ -1,0 +1,119 @@
+" =========== KEYMAP
+" --- http://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping
+" --- MODE LETTERS:
+" --- n: normal only
+" --- v: visual and select
+" --- o: operator-pending
+" --- x: visual only
+" --- s: select only
+" --- i: insert
+" --- c: command-line
+" --- l: insert, command-line, regexp-search, others;
+"        (Collectively called "Lang-Arg" pseudo-mode)
+
+let mapleader = '\'
+
+" No need to shift to get a colon! 
+" (But, f<ch> followed by ; breaks :(
+" nnoremap ; :
+
+nnoremap <silent><F2> :NERDTreeToggle<CR>
+nnoremap <silent><LEADER>n :NERDTreeToggle<CR>
+" Open NerdTree and focus on current file
+nnoremap <silent><LEADER>N :NERDTreeFind<CR>:NERDTreeFocus<CR>
+
+" Show Buffer Methods (no ctags needed)
+nnoremap <silent><F4> :TlistToggle<CR>
+nnoremap <silent><LEADER>m :TlistToggle<CR>
+
+" Next/Prev Buffer (inconsistent for CtrlSpace buffers)
+nnoremap <C-F9> :N<CR> :set ts=2 expandtab softtabstop=2 sw=2 wrap<CR>
+nnoremap <C-F10> :n<CR> :set ts=2 expandtab softtabstop=2 sw=2 wrap<CR>
+
+" Next Window
+nnoremap <F12> <C-W>w
+
+nnoremap <C-C><C-C> :set paste<CR>
+nnoremap <C-C><C-V> :set nopaste ai<CR>
+
+" Remove trailing whitespace
+nnoremap gz mz:%s/ *$//<CR>'zz.
+
+" Git
+nnoremap <LEADER>gb :Gblame<CR>
+nnoremap <LEADER>gd :Gdiff<CR>
+
+" Lazy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Tab Navigation
+nnoremap <silent><Tab> :tabn<CR>
+nnoremap <silent><S-Tab> :tabp<CR>
+nnoremap <LEADER>1 1gt
+nnoremap <LEADER>2 2gt
+nnoremap <LEADER>3 3gt
+nnoremap <LEADER>4 4gt
+nnoremap <LEADER>5 5gt
+nnoremap <LEADER>6 6gt
+nnoremap <LEADER>7 7gt
+nnoremap <LEADER>8 8gt
+nnoremap <LEADER>9 9gt
+nnoremap <LEADER>0 10gt
+
+" CtrlSpace next/prev buffer
+nnoremap <silent><LEADER>k :CtrlSpace k<CR>
+nnoremap <silent><LEADER>j :CtrlSpace j<CR>
+
+" Dash @ https://github.com/rizzatti/dash.vim
+" Find cursor word in docset for filetype
+nnoremap <silent><LEADER>d :Dash<CR>
+" Find cursor word in ALL docsets
+nnoremap <silent><LEADER>D :Dash!<CR>
+
+" GitGutter: ]c / [c for next/prev change
+
+" RubyTest
+map <Leader>rt <Plug>RubyTestRun
+map <Leader>rf <Plug>RubyFileRun
+map <Leader>rr <Plug>RubyLastRun
+
+" Jump to last tab
+let g:lasttab = 1
+nmap <silent><LEADER>\ :exe "tabn ".g:lasttab<CR>
+nmap <silent><LEADER>] :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+" iTerm-ish key bindings for tab new
+" unmap <LEADER>t
+nnoremap <LEADER>t :tabnew<CR>
+" vim-ish binding for tab close (like <C-W>c to close a window)
+nnoremap <LEADER>c :tabclose<CR>:tabp<CR>
+
+" Reset window sizes (find a better way!)
+map <C-W>\ <C-W>=<TAB><C-W>=<TAB><C-W>=<TAB><C-W>=<TAB><C-W>=<TAB><C-W>=<TAB><C-W>=<TAB><C-W>=<TAB><C-W>=<TAB><C-W>=<TAB>1gt
+
+" Rename tab a la tmux
+nnoremap <LEADER>= :CtrlSpace =<CR>
+
+" Search using Ctrl+P courtesy awesome CtrlSpace plugin
+nnoremap <silent><C-P> :CtrlSpace o/<CR>
+" ...and a tab list via :CtrlSpace l
+
+" Maximize window. <F3> also works.
+nnoremap <silent><C-W>e :MaximizerToggle<CR>
+nnoremap <silent><C-W><C-E> :MaximizerToggle<CR>
+vnoremap <silent><C-W>e :MaximizerToggle<CR>gv
+vnoremap <silent><C-W><C-E> :MaximizerToggle<CR>gv
+inoremap <silent><C-W>e <C-o>:MaximizerToggle<CR>
+inoremap <silent><C-W><C-E> <C-o>:MaximizerToggle<CR>
+
+" Highlight all occurrences of word under cursor
+" (Use */# to jump to next/prev)
+nnoremap <silent><F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+nnoremap <silent><LEADER>* :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+" Turn off highlighting
+nnoremap <silent><LEADER># :set nohls<CR>
+

@@ -1,0 +1,60 @@
+" ========== COLORS
+" Map: http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
+
+set guicursor=a:blinkon0
+
+" 256 colors via
+" http://vim.wikia.com/wiki/Using_vim_color_schemes_with_Putty
+if &term =~ "xterm"
+  " let &t_Co=8
+  let &t_Co=256
+  " restore screen after quitting
+  set t_ti=7[r[?47h t_te=[?4718
+  if has("terminfo")
+    let &t_Sf="\[3%p1%dm"
+    let &t_Sb="\[4%p1%dm"
+  else
+    let &t_Sf="\[3%dm"
+    let &t_Sb="\[4%dm"
+  endif
+endif
+
+" hi CursorLine cterm=NONE ctermbg=0
+" hi ColorColumn ctermbg=255
+" hi NonText ctermbg=252
+" let &colorcolumn=120
+
+" Shade margin beyond 120ch
+" hi Normal ctermbg=254
+" hi NonText ctermbg=253
+" hi ColorColumn ctermbg=253
+" let &colorcolumn=join(range(120,333),",")
+
+" GitGutter
+" hi GitGutterAdd
+" hi GitGutterChange
+" hi GitGutterDelete
+" hi GitGutterChangeDelete
+
+set background=dark
+
+colorscheme railscasts
+  set colorcolumn=0  " margin nag
+  hi Normal ctermbg=016
+
+  hi ColorColumn ctermbg=16
+  hi CursorLine cterm=NONE ctermbg=16
+  hi StatusLine ctermbg=18 ctermfg=16
+  hi LineNr ctermfg=236
+  hi VertSplit ctermbg=234 ctermfg=234
+  hi Search ctermbg=052
+
+  hi Pmenu ctermbg=019 ctermfg=015      " C-n / C-p
+  hi PmenuSel ctermbg=017 ctermfg=015
+
+  hi Visual ctermbg=130 ctermfg=16      " selected text
+
+  hi TabLineFill ctermfg=234 ctermbg=White
+  hi TabLine ctermfg=248 ctermbg=234
+  hi TabLineSel cterm=NONE ctermbg=237 ctermfg=192
+
