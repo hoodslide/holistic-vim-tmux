@@ -1,14 +1,13 @@
 ## Holistic vim + tmux
 
-#### Whatsit?
+### Whatsit?
 
 
 There's a lot of interest in using vim and tmux together, but it's easy to get frustrated
 if you're just starting out, or even if you're upgrading from MacVim or gvim.  What should
-be simple things like mouse support, or getting 256 colors to work consistently across
-iTerm2, tmux, and iPad SSH clients can turn into a lot of Google. Once the basics are
-working, finding the right combination of plugins, learning their idiosyncrasies, and
-tailoring them so they make sense together is another time suck.
+be simple things like adding mouse support, or getting 256 colors to work consistently across
+clients can turn into a lot of Google. Once the basics are
+set up, finding and configuring the right combination of plugins another time suck.
 
 IDE-lite bundles such as [SPF13](https://github.com/spf13/spf13-vim) tend to be slow, turn
 on a glut of unwanted features, and when something goes wrong it's not always obvious
@@ -28,12 +27,14 @@ Fork this repo to, say, `~/git/holistic-vim-tmux`
 #### 256 color support
 
 For 256 colors across devices, it's best to add an alias to your startup script:
-`$ alias tmux='TERM=screen-256color-bce tmux -u'`
+```
+$ alias tmux='TERM=screen-256color-bce tmux -u'
+```
 
-If you're using iTerm2, edit your profile, and under the [Terminal] tab, set the Report Terminal Type to `xterm-256color`
-
-On an iPad, I've found vSSH to be the best client. Again, you'll need to set the "Terminal
-type" to `xterm-256color` in the advanced section at the bottom.
+* If you're using iTerm2, edit your profile, and under the [Terminal] tab, set the Report Terminal Type to `xterm-256color`
+* On an iPad, I've found vSSH to be the best client. Again, you'll need to set the "Terminal type" to `xterm-256color` in the advanced section at the bottom.
+* For tmux, there are some utf8 options, but I've found they're not needed once you've
+  aliased tmux to start with the TERM environment variable above.
 
 Now back up your existing config:
 ```
