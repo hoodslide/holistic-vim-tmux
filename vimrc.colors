@@ -40,7 +40,7 @@ set background=dark
 
 colorscheme railscasts
   set colorcolumn=0  " margin nag
-  hi Normal ctermbg=016
+  " hi Normal ctermbg=016
 
   hi ColorColumn ctermbg=16
   hi CursorLine cterm=NONE ctermbg=16
