@@ -1,21 +1,20 @@
 ## Holistic vim + tmux
 
-### Whatsit?
+Chances are if you're here, you already know the advantages of using tmux: you can leave your computer at work, and with a little SSH-fu pick up exactly where you left off, whether from home or from a tablet in a coffee shop. Remote pairing is as easy as having someone else connect to your tmux session.
 
-Chances are if you're here, you already know the advantages of using tmux: you can leave your computer at work, and with a little SSH-fu you can pick up exactly where you left off, whether from home or from a tablet in a coffee shop. Or have someone else connect to your tmux session for free and easy remote pairing.
+Of course this requires console-mode vim (or emacs, or pico, or...). For those coming from MacVim or gvim, that means giving up GUI menus, some of your favorite key-bindings (ANSI terminals don't know WTF a Cmd key is), and learning to live with 256 colors. It's worth it.
 
-Of course this requires console-mode vim (or emacs, or pico, or...). For those coming from MacVim or gvim, that means giving up GUI menus, some of your favorite key-bindings (ANSI terminals don't know WTF a Cmd key is), and learning to live with 256 colors. Surprisingly, mouse support is very good.
+vim and tmux share a number of concepts, but frustratingly different terminology: tabs, panes, windows, sessions, buffers... worse, the key-bindings to manage these are very different out of the box. This project aims to add some predictability to the key-bindings between vim, tmux, and even some plugins.
 
-Even though vim and tmux share a number of concepts, they each have their own terminology key-bindings to manage them. Tabs, panes, windows, sessions, buffers... and once you start adding plug-ins, these key-bindings only get more arcane, and sometimes clobber each other.
+#### Philosophy
 
-Projects such as [SPF13](https://github.com/spf13/spf13-vim) and [Janus](https://github.com/carlhuda/janus) provide a collection of plugins and mappings for vim that work well together, but (for me anyway) tend to be slow, turn on a glut of unwanted features, and *when* something goes wrong it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning them one-by-one, and configuring key-bindings that make sense not just for the plugin but for vim and tmux as a whole.
+Projects such as [SPF13](https://github.com/spf13/spf13-vim) and [Janus](https://github.com/carlhuda/janus) provide a collection of plugins and mappings for vim that work well together, but (for me anyway) tend to be slow, turn on a glut of unwanted features, and *when* something goes wrong it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning and configuring them one-by-one. It's a great way to learn.
 
-If you want to do the same, fork this repo, comment out any plugin you don't recognize, and then start coding!
+If you want to do the same, this is for you.
 
 ### Installation
 
-Fork this repo to, say, `~/git/holistic-vim-tmux`
-Now back up your existing config:
+Fork this repo to, say, `~/git/holistic-vim-tmux`, and back up your existing config:
 ```
 $ cd ~
 $ mv .vim .vim-
@@ -23,20 +22,19 @@ $ mv .vimrc .vimrc-
 $ mv .tmux.conf .tmux.conf-
 ```
 
-...link to the new:
+...link your config files to the forked repo:
 ```
 $ ln -s PATH/TO/git/holistic-vim-tmux .vim
 $ ln -s .vim/vimrc .vimrc
 $ ln -s .vim/tmux.conf .tmux.conf
 ```
 
-...and then start tmux and vim:
+...and then start vim (but not tmux), telling it to install missing plugins:
 ```
-$ tmux new -s PROJECT-NAME
 $ vi -c PluginInstall
 ```
 
-Expect some fireworks from vim, since none of the plugins exist yet. That's fine. Let the installer finish, then quit and restart vim.
+Expect some fireworks from vim, since none of the plugins exist yet. That's fine. Let the installer finish, then quit and restart vim. 
 
 #### Powerline Fonts
 
@@ -65,7 +63,7 @@ Once done, you'll need to completely quit and restart tmux (you can't just detac
 
 ### Plugins
 
-Here's a very brief tour of the plugins being used. Again, turn off anything you don't want, need or understand yet via the vimrc.plugins and vimrc.keymap files. Most plugins, you can type `:help PLUGIN_NAME`, or go to the project's Github page to browse the README, wiki, and plugin source.
+Here's the plugins being used. Again, turn off anything you don't want, need or understand yet via the vimrc.plugins and vimrc.keymap files. Most plugins, you can type `:help PLUGIN_NAME`, or go to the project's Github page to browse the README, wiki, and plugin source.
 
 **Vim care & feeding**:
 * [Vundle.vim](https://github.com/gmarik/Vundle.vim) - Package manager
