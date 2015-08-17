@@ -19,9 +19,9 @@ $ mv .vimrc .vimrc~
 $ mv .tmux.conf .tmux.conf~
 ```
 
-...link in the new:
+...link to the new:
 ```
-$ ln -s git/holistic-vim-tmux .vim
+$ ln -s PATH/TO/git/holistic-vim-tmux .vim
 $ ln -s .vim/vimrc .vimrc
 $ ln -s .vim/tmux.conf .tmux.conf
 ```
@@ -36,7 +36,11 @@ Expect some fireworks from vim, since none of the plugins exist yet. That's fine
 
 #### Powerline Fonts
 
-Notice the weird characters in the status bars? That's courtesy of the [Airline](https://github.com/bling/vim-airline) and [Tmuxline](https://github.com/edkolev/tmuxline.vim) plugins, which rely on custom fonts to draw prettier status lines with symbols for branching and such. You can uninstall these plugins, or else install [Powerline fonts](https://github.com/powerline/fonts). "Droid Sans Mono for Powerline" is close to perfect:
+Notice the weird characters in the status bars?
+
+![status_line_borked](https://raw.githubusercontent.com/hoodslide/holistic-vim-tmux/master/assets/statusline-sans-powerline-fonts.jpg)
+
+That's courtesy of the [Airline](https://github.com/bling/vim-airline) and [Tmuxline](https://github.com/edkolev/tmuxline.vim) plugins, which rely on custom fonts to draw prettier status lines with symbols for branching and such. You can uninstall these plugins, or else install [Powerline fonts](https://github.com/powerline/fonts). "Droid Sans Mono for Powerline" is close to perfect:
 
 ![status line](https://raw.githubusercontent.com/hoodslide/holistic-vim-tmux/master/assets/statusline.jpg)
 
@@ -58,25 +62,25 @@ Colors look stoopid? vim/tmux support 256 colors, but your terminal may not be c
 
 Here's a very brief tour of the plugins being used. Again, turn off anything you don't want, need or understand yet via the vimrc.plugins and vimrc.keymap files. Most plugins, you can type `:help *plugin_name*`, or go to the project's Github page to browse the README, wiki, and plugin source.
 
-* [Vundle.vim](https://github.com/gmarik/Vundle.vim)
-* [taglist.vim](https://github.com/vim-scripts/taglist.vim)
-* [HTML-AutoCloseTag](https://github.com/amirh/HTML-AutoCloseTag)
-* [vim-airline](https://github.com/bling/vim-airline)
-* [tmuxline.vim](https://github.com/edkolev/tmuxline.vim)
-* [MatchTag](https://github.com/gregsexton/MatchTag)
-* [matchit](https://github.com/vim-scripts/matchit.zip)
-* [ag.vim](https://github.com/rking/ag.vim)
-* [syntastic](https://github.com/scrooloose/syntastic)
-* [nerdtree](https://github.com/scrooloose/nerdtree)
-* [nerdtree-ag](https://github.com/taiansu/nerdtree-ag)
-* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace)
-* [vim-maximizer.git](https://github.com/szw/vim-maximizer.git)
-* [vim-commentary](https://github.com/tpope/vim-commentary)
-* [vim-fugitive](https://github.com/tpope/vim-fugitive)
-* [vim-surround](https://github.com/tpope/vim-surround)
-* [vim-repeat](https://github.com/tpope/vim-repeat)
-* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-* [dash.vim](https://github.com/rizzatti/dash.vim)
+vim care & feeding:
+* [Vundle.vim](https://github.com/gmarik/Vundle.vim) - Package manager
+* [vim-airline](https://github.com/bling/vim-airline) - Sexy status line for vim
+* [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) - Set tmux status line to match look and feel of your vim-airline config
+* [vim-colorschemes](https://github.com/flazz/vim-colorschemes) - Lots. Here's a handy [color chart](http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg) if you want to tweak further.
+* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
+
+Navigation:
+* [nerdtree](https://github.com/scrooloose/nerdtree) - tree explorer
+* [taglist.vim](https://github.com/vim-scripts/taglist.vim) - "groups and displays the functions, classes, structures, enumerations, macro definitions and other parts of a source code file in a Vim window. The taglist plugin will automatically highlight the current tag. You can jump to the definition of a tag by selecting the tag name from the taglist window."
+* [MatchTag](https://github.com/gregsexton/MatchTag) - Use '%' to match HTML elements
+* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
+
+Searching:
+* [ag.vim](https://github.com/rking/ag.vim) - "Ag can be used as a replacement for 153% of the uses of ack. You have to first [install ag](https://github.com/ggreer/the_silver_searcher) itself."
+* [nerdtree-ag](https://github.com/taiansu/nerdtree-ag) - Ag searching from NerdTree
+
+Syntax checking and highlighting:
+* [syntastic](https://github.com/scrooloose/syntastic) - "runs files through external syntax checkers and displays any resulting errors to the user"
 * [nginx-vim-syntax](https://github.com/evanmiller/nginx-vim-syntax)
 * [vim-less](https://github.com/groenewege/vim-less)
 * [vim-css3-syntax](https://github.com/hail2u/vim-css3-syntax)
@@ -89,7 +93,31 @@ Here's a very brief tour of the plugins being used. Again, turn off anything you
 * [puppet-syntax-vim](https://github.com/puppetlabs/puppet-syntax-vim)
 * [vim-haml](https://github.com/tpope/vim-haml)
 * [vim-markdown](https://github.com/tpope/vim-markdown)
-* [vim-rails](https://github.com/tpope/vim-rails)
-* [vim-colorschemes](https://github.com/flazz/vim-colorschemes)
-* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
+
+Ruby/Rails:
+* [vim-rails](https://github.com/tpope/vim-rails) - swiss army chainsaw
 * [vim-rubytest](https://github.com/janx/vim-rubytest)
+
+Window management:
+* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
+* [vim-maximizer.git](https://github.com/szw/vim-maximizer.git) - Toggle maximizing the current split-window
+
+Source Control:
+* [vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
+
+Editing:
+* [vim-surround](https://github.com/tpope/vim-surround)
+* [HTML-AutoCloseTag](https://github.com/amirh/HTML-AutoCloseTag) - "Automatically closes HTML tags once you finish typing them."
+* [vim-commentary](https://github.com/tpope/vim-commentary) - Comment out code
+* [vim-repeat](https://github.com/tpope/vim-repeat)
+
+Documentation:
+* [dash.vim](https://github.com/rizzatti/dash.vim)
+
+CtrlSpace was listed 3 times. It does the work of several plugins, and makes managing tabs and buffers just as natural as with any GUI editor. In addition it has a great fuzzy file search built it. (CtrlP is the de-facto fuzzy search, but the one included with CtrlSpace is tightly integrated with its other features). It's well worth picking up.
+
+### Key Bindings
+
+...
