@@ -2,9 +2,13 @@
 
 ### Whatsit?
 
-There's a lot of interest in using vim and tmux together, but it's easy to get frustrated if you're just starting out, or even if you're "upgrading" from MacVim or gvim.  What should be simple things like adding mouse support, or getting 256 colors to work consistently across clients can turn into a lot of Google. Worse, even though vim and tmux share a number of concepts, they each have their own terminology and independent key combinations to manage them. Tabs, panes, windows, sessions, workspaces, buffers... and once you start adding plug-ins, these key combinations only get more arcane, and sometimes clobber each other.
+Chances are if you're here, you already know the advantages of using tmux: you can leave your computer at work, and with a little SSH-fu you can pick up exactly where you left off, whether from home or from a tablet in a coffee shop. Or have someone else connect to your tmux session for free and easy remote pairing.
 
-Projects such as [SPF13](https://github.com/spf13/spf13-vim) and [Janus](https://github.com/carlhuda/janus) provide a collection of plugins and mappings for vim that work well together, but (for me anyway) tend to be slow, turn on a glut of unwanted features, and when something goes wrong it's not always obvious where to look. Like many vim users, I started over with just a package manager (Vundle), and added only the plugins I knew I would use. That's a growing list, but at least it means I'm learning them one-by-one, and configuring keybindings that make sense not just for the plugin but for vim and tmux as a whole.
+Of course this requires console-mode vim (or emacs, or pico, or...). For those coming from MacVim or gvim, that means giving up GUI menus, some of your favorite key-bindings (ANSI terminals don't know WTF a Cmd key is), and learning to live with 256 colors. Surprisingly, mouse support is very good.
+
+Even though vim and tmux share a number of concepts, they each have their own terminology key-bindings to manage them. Tabs, panes, windows, sessions, buffers... and once you start adding plug-ins, these key-bindings only get more arcane, and sometimes clobber each other.
+
+Projects such as [SPF13](https://github.com/spf13/spf13-vim) and [Janus](https://github.com/carlhuda/janus) provide a collection of plugins and mappings for vim that work well together, but (for me anyway) tend to be slow, turn on a glut of unwanted features, and *when* something goes wrong it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning them one-by-one, and configuring key-bindings that make sense not just for the plugin but for vim and tmux as a whole.
 
 If you want to do the same, fork this repo, comment out any plugin you don't recognize, and then start coding!
 
@@ -14,9 +18,9 @@ Fork this repo to, say, `~/git/holistic-vim-tmux`
 Now back up your existing config:
 ```
 $ cd ~
-$ mv .vim .vim~
-$ mv .vimrc .vimrc~
-$ mv .tmux.conf .tmux.conf~
+$ mv .vim .vim-
+$ mv .vimrc .vimrc-
+$ mv .tmux.conf .tmux.conf-
 ```
 
 ...link to the new:
@@ -46,17 +50,18 @@ That's courtesy of the [Airline](https://github.com/bling/vim-airline) and [Tmux
 
 #### Adding 256 color support
 
-Colors look stoopid? vim/tmux support 256 colors, but your terminal may not be configured to display them properly. This may help:
+Colors look stoopid? vim/tmux support 256 colors, but your terminal may not be configured to display them properly. Try this:
 
-* Add an alias to your startup script:
+* Add an alias to your shell's startup script. Weirdly, just setting `export TERM=...` before calling tmux, or setting utf8 from within the tmux.conf rather than passing in `-u`, was *not* sufficient to enable 256 colors for me consistently across various terminal clients.
   ```
   alias tmux='TERM=screen-256color-bce tmux -u'
   ```
-
 * If you're using iTerm2, edit your profile, and under the [Terminal] tab, set the Report Terminal Type option to `xterm-256color`
-* On an iPad, [vSSH](http://www.velestar.com/Pages/VSSHIOSPage.aspx) is the best client I've found so far. Again, you'll need to set the "Terminal type" to `xterm-256color` in the advanced section at the bottom. Sadly, no support for Powerline fonts yet, though the developers are "considering it."
+* On an iPad, [vSSH](http://www.velestar.com/Pages/VSSHIOSPage.aspx) is a great choice. It even supports mouse mode, if you want easy scrolling and the ability to drag-resize tmux and vim panes. Again, you'll need to set the "Terminal type" to `xterm-256color` in the advanced section at the bottom. Sadly, no support for Powerline fonts yet, though the developers are "considering it."
 * Windows users, try Putty
 * Linux users probably already have a system  ;)
+
+Once done, you'll need to completely quit and restart tmux (you can't just detach). Ensure the alias is set before restarting.
 
 ### Plugins
 
@@ -66,11 +71,11 @@ Here's a very brief tour of the plugins being used. Again, turn off anything you
 * [Vundle.vim](https://github.com/gmarik/Vundle.vim) - Package manager
 * [vim-airline](https://github.com/bling/vim-airline) - Sexy status line for vim
 * [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) - Set tmux status line to match look and feel of your vim-airline config
-* [vim-colorschemes](https://github.com/flazz/vim-colorschemes) - Lots. Here's a handy [color chart](http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg) if you want to tweak further.
-* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
+* [vim-colorschemes](https://github.com/flazz/vim-colorschemes) - Lots of themes to play with. Here's a [color chart](http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg) if you want to tweak further.
+* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Save and restore workspaces, preserving all of your tabs, panes and buffers. Yes!
 
 **Window management**:
-* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
+* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Allow each tab to manage its own unique set of buffers; shortcuts for quickly renaming and moving tabs.
 * [vim-maximizer.git](https://github.com/szw/vim-maximizer.git) - Toggle maximizing the current split-window
 
 **Source Control**:
@@ -88,11 +93,11 @@ Here's a very brief tour of the plugins being used. Again, turn off anything you
 * [nerdtree](https://github.com/scrooloose/nerdtree) - tree explorer
 * [taglist.vim](https://github.com/vim-scripts/taglist.vim) - "groups and displays the functions, classes, structures, enumerations, macro definitions and other parts of a source code file in a Vim window. The taglist plugin will automatically highlight the current tag. You can jump to the definition of a tag by selecting the tag name from the taglist window."
 * [MatchTag](https://github.com/gregsexton/MatchTag) - Use '%' to match HTML elements
-* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
 
 **Searching**:
 * [ag.vim](https://github.com/rking/ag.vim) - "Ag can be used as a replacement for 153% of the uses of ack. You have to first [install ag](https://github.com/ggreer/the_silver_searcher) itself."
 * [nerdtree-ag](https://github.com/taiansu/nerdtree-ag) - Ag searching from NerdTree
+* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - CtrlP/Cmd-T style fuzzy searching, tightly integrated with other CtrlSpace features.
 
 **Ruby/Rails**:
 * [vim-rails](https://github.com/tpope/vim-rails) - swiss army chainsaw
@@ -116,7 +121,7 @@ Here's a very brief tour of the plugins being used. Again, turn off anything you
 * [vim-haml](https://github.com/tpope/vim-haml)
 * [vim-markdown](https://github.com/tpope/vim-markdown)
 
-CtrlSpace was listed 3 times. It does the work of several plugins, and makes managing tabs and buffers just as natural as with any GUI editor. In addition it has a great fuzzy file search built it. (CtrlP is the de-facto fuzzy search, but the one included with CtrlSpace is tightly integrated with its other features). It's well worth picking up.
+CtrlSpace was listed 3 times because it does the work of several plugins, and makes managing tabs and buffers just as natural as with any GUI editor. It's well worth the effort.
 
 ### Key Bindings
 
