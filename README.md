@@ -32,7 +32,7 @@ $ ln -s .vim/tmux.conf .tmux.conf
 $ vi -c PluginInstall
 ```
 
-Expect some fireworks from vim, since none of the plugins exist yet. That's fine. Let the installer finish, then quit and restart vim. 
+Expect some fireworks from vim, since none of the plugins exist yet. That's fine. Let the installer finish, then quit and restart vim.
 
 #### Powerline Fonts
 
@@ -120,6 +120,89 @@ Here's the plugins being used. Again, turn off anything you don't want, need or 
 
 CtrlSpace was listed 3 times because it does the work of several plugins, and makes managing tabs and buffers just as natural as with any GUI editor. It's well worth the effort.
 
-### Key Bindings
 
-...
+## Key Bindings
+
+
+#### Tabs, aka window (tmux), or tab (vim)
+
+|                      | **tmux**  | **vim**            | **CtrlSpace** | **NerdTree** |
+| --------             |:-------   |:-------            |:------------- |:-------------|
+| New tab              | C-\ t     | \ t                |
+| Open file in new tab |           | :tabedit file.txt  | t             | t             |
+| Rename tab           | C-\ =     | \ =                | =             |
+| Close tab            | C-\ c     | \c                 | C (also clean stale buffers) |
+| Switch to prev tab   | C-\ [     | C-TAB              | [             |
+| Switch to next tab   | C-\ ]     | TAB                | ]             |
+| Switch to n-th tab   | C-\ [1-9] | \ [1-9]            |
+| Toggle last tab      | C-\ C-\   | \ \                |
+| Move tab left/right  | C-\ -/+   |                    | -/+           |
+| Show tab list        |           | :tabs              | L             |
+
+
+#### Plugins
+|                                | Keys             |
+| --------                       |:-------          |
+| **NerdTree**                   | |
+| Open NerdTree File Explorer    | \n *or* F2       |
+| Show current file in NerdTree  | \N               |
+| **TagList**                    | |
+| Show file structure            | \m *or* F4       |
+| **Dash Docs**                  | |
+| Show docs for cursor word      | \ d |
+| Show docs, all docsets         | \ D |
+| **RubyTest**                   | |
+| Run test under cursor          | rt |
+| Run all tests in current file  | rf |
+| Rerun last test                | rr |
+
+
+#### Panes
+
+| **What**                       | **tmux**  | **vim**   | **CtrlSpace** | **NerdTree** |
+| --------                       |:-------   |:-------   |:------------- |:-------------|
+| Split pane vertically          | C-\ v     | C-W v     |               |
+| Split pane horizontally        | C-\ s     | C-W s     |               |
+| Open file in v-split           |           |           | v             | s (boo...)   |
+| Open file in h-split           |           |           | s             | i (boo...)   |
+| Toggle maximize pane           | C-\ e     | C-W e     |
+| Switch to pane on the left     | C-\ h     | C-h       |
+| Switch to pane on the right    | C-\ l     | C-l       |
+| Switch to pane above           | C-\ k     | C-k       |
+| Switch to pane berow           | C-\ j     | C-j       |
+| Switch to next pane            | C-\ j     | C-j       |
+| Toggle between panes           | C-\ p     | C-W p     |
+
+
+#### Misc
+
+| **What**                       | **tmux**                     | **vim**   | **CtrlSpace** | **NerdTree** |
+| --------                       |:-------                      |:-------   |:------------- |:-------------|
+| Split window vertically        | C-\ v                        | C-W v     |               |
+| Clear Scrollback Buffer        | C-\ k (a la Cmd-k in iTerm2) |
+| Reload config files            | C-\ r                        | :so ~/.vimrc |
+| Show Help                      | C-\ ?                        | :help ... | ?             | ? |
+| Remove all trailing whitespace |                              | gz |
+
+
+#### Search
+
+| **What**                       | **vim**   | **CtrlSpace** | **NerdTree** |
+| --------                       |:-------   |:------------- |:-------------|
+| Fuzzy search for filename      |           | C-p           |
+| Search for text within files   | :Ag regex |
+| Search for text (limit scope)  | :Ag regex [path/] |       | m s          |
+| Find next occurence of cursor word | * |
+| Find previous occurence of cursor word | # |
+| Highlight all occurrences of cursor word | \ * |
+| Turn off highlight words       | \ # |
+
+
+#### Git
+
+| **What**                       | **vim**   |
+| --------                       |:-------   |
+| git blame current file         | \ g b     |
+| git diff current file          | \ g d     |
+| Other git stuff                | :help fugitive |
+
