@@ -13,7 +13,7 @@
 
 let mapleader = '\'
 
-" No need to shift to get a colon! 
+" No need to shift to get a colon!
 " (But, f<ch> followed by ; breaks :(
 " nnoremap ; :
 
@@ -25,10 +25,6 @@ nnoremap <silent><LEADER>N :NERDTreeFind<CR>:NERDTreeFocus<CR>
 " Show Buffer Methods (no ctags needed)
 nnoremap <silent><F4> :TlistToggle<CR>
 nnoremap <silent><LEADER>m :TlistToggle<CR>
-
-" Next/Prev Buffer (inconsistent for CtrlSpace buffers)
-nnoremap <C-F9> :N<CR> :set ts=2 expandtab softtabstop=2 sw=2 wrap<CR>
-nnoremap <C-F10> :n<CR> :set ts=2 expandtab softtabstop=2 sw=2 wrap<CR>
 
 " Next Window
 nnoremap <F12> <C-W>w
