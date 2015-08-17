@@ -40,7 +40,7 @@ Notice the weird characters in the status bars?
 
 ![status_line_borked](https://raw.githubusercontent.com/hoodslide/holistic-vim-tmux/master/assets/statusline-sans-powerline-fonts.jpg)
 
-That's courtesy of the [Airline](https://github.com/bling/vim-airline) and [Tmuxline](https://github.com/edkolev/tmuxline.vim) plugins, which rely on custom fonts to draw prettier status lines with symbols for branching and such. You can uninstall these plugins, or else install [Powerline fonts](https://github.com/powerline/fonts). "Droid Sans Mono for Powerline" is close to perfect:
+That's courtesy of the [Airline](https://github.com/bling/vim-airline) and [Tmuxline](https://github.com/edkolev/tmuxline.vim) plugins, which rely on custom fonts to draw prettier status lines with symbols for branching and such. You can uninstall these plugins, or else install [Powerline fonts](https://github.com/powerline/fonts) so the special characters will render properly. "Droid Sans Mono for Powerline" is a good choice:
 
 ![status line](https://raw.githubusercontent.com/hoodslide/holistic-vim-tmux/master/assets/statusline.jpg)
 
