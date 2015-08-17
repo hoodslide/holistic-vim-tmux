@@ -124,7 +124,7 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 ## Key Bindings
 
 
-#### Tabs, aka window (tmux), or tab (vim)
+#### Tabs, aka windows (tmux)
 
 |                      | **tmux**  | **vim**            | **CtrlSpace** | **NerdTree** |
 | --------             |:-------   |:-------            |:------------- |:-------------|
@@ -140,54 +140,54 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 | Show tab list        |           | :tabs              | L             |
 
 
-#### Plugins
-|                                | Keys             |
-| --------                       |:-------          |
-| **NerdTree**                   | |
-| Open NerdTree File Explorer    | \n *or* F2       |
-| Show current file in NerdTree  | \N               |
-| **TagList**                    | |
-| Show file structure            | \m *or* F4       |
-| **Dash Docs**                  | |
-| Show docs for cursor word      | \ d |
-| Show docs, all docsets         | \ D |
-| **RubyTest**                   | |
-| Run test under cursor          | rt |
-| Run all tests in current file  | rf |
-| Rerun last test                | rr |
+#### Panes, aka windows (vim)
 
-
-#### Panes
-
-| **What**                       | **tmux**  | **vim**   | **CtrlSpace** | **NerdTree** |
+|                                | **tmux**  | **vim**   | **CtrlSpace** | **NerdTree** |
 | --------                       |:-------   |:-------   |:------------- |:-------------|
 | Split pane vertically          | C-\ v     | C-W v     |               |
 | Split pane horizontally        | C-\ s     | C-W s     |               |
-| Open file in v-split           |           |           | v             | s (boo...)   |
-| Open file in h-split           |           |           | s             | i (boo...)   |
+| Open file in v-split pane      |           |           | v             | s (boo...)   |
+| Open file in h-split pane      |           |           | s             | i (boo...)   |
 | Toggle maximize pane           | C-\ e     | C-W e     |
 | Switch to pane on the left     | C-\ h     | C-h       |
 | Switch to pane on the right    | C-\ l     | C-l       |
 | Switch to pane above           | C-\ k     | C-k       |
 | Switch to pane berow           | C-\ j     | C-j       |
-| Switch to next pane            | C-\ j     | C-j       |
 | Toggle between panes           | C-\ p     | C-W p     |
 
 
-#### Misc
+#### Plugins
 
-| **What**                       | **tmux**                     | **vim**   | **CtrlSpace** | **NerdTree** |
-| --------                       |:-------                      |:-------   |:------------- |:-------------|
-| Split window vertically        | C-\ v                        | C-W v     |               |
-| Clear Scrollback Buffer        | C-\ k (a la Cmd-k in iTerm2) |
-| Reload config files            | C-\ r                        | :so ~/.vimrc |
-| Show Help                      | C-\ ?                        | :help ... | ?             | ? |
-| Remove all trailing whitespace |                              | gz |
+| *NerdTree*                     | Keys             |
+| --------                       |:-------          |
+| Open NerdTree File Explorer    | \n *or* F2       |
+| Show current file in NerdTree  | \N               |
+
+| *TagList*                      | Keys             |
+| --------                       |:-------          |
+| Show file structure            | \m *or* F4       |
+
+| *Dash Docs*                    | Keys             |
+| --------                       |:-------          |
+| Show docs for cursor word      | \ d |
+| Show docs, all docsets         | \ D |
+
+| *RubyTest*                     | Keys             |
+| --------                       |:-------          |
+| Run test under cursor          | rt |
+| Run all tests in current file  | rf |
+| Rerun last test                | rr |
+
+| *Fugitive (git)*               | **vim**   |
+| --------                       |:-------   |
+| git blame current file         | \ g b     |
+| git diff current file          | \ g d     |
+| Other git stuff                | :help fugitive |
 
 
 #### Search
 
-| **What**                       | **vim**   | **CtrlSpace** | **NerdTree** |
+|                                | **vim**   | **CtrlSpace** | **NerdTree** |
 | --------                       |:-------   |:------------- |:-------------|
 | Fuzzy search for filename      |           | C-p           |
 | Search for text within files   | :Ag regex |
@@ -198,11 +198,13 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 | Turn off highlight words       | \ # |
 
 
-#### Git
+#### Misc
 
-| **What**                       | **vim**   |
-| --------                       |:-------   |
-| git blame current file         | \ g b     |
-| git diff current file          | \ g d     |
-| Other git stuff                | :help fugitive |
+|                                | **tmux**                     | **vim**   | **CtrlSpace** | **NerdTree** |
+| --------                       |:-------                      |:-------   |:------------- |:-------------|
+| Split window vertically        | C-\ v                        | C-W v     |               |
+| Clear Scrollback Buffer        | C-\ k (a la Cmd-k in iTerm2) |
+| Reload config files            | C-\ r                        | :so ~/.vimrc |
+| Show Help                      | C-\ ?                        | :help ... | ?             | ? |
+| Remove all trailing whitespace |                              | gz |
 
