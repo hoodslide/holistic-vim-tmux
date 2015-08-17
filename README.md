@@ -6,7 +6,7 @@ Of course this requires console-mode vim (or emacs, or pico, or...). For those c
 
 vim and tmux share a number of concepts, but frustratingly different terminology: tabs, panes, windows, sessions, buffers... worse, the key-bindings to manage these are very different out of the box. These vim/tmux config files aim to add some predictability to the key-bindings between vim, tmux, and even some plugins.
 
-These are just simple config files, not a massive project such as [SPF13](https://github.com/spf13/spf13-vim) or [Janus](https://github.com/carlhuda/janus). Those project provide collections of plugins and mappings for vim that work well together, but (for me anyway) tend to be slow, turn on a glut of unwanted features, and *when* something goes wrong it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning and configuring them one-by-one. It's a great way to learn.
+These are just simple config files, not a massive project such as [SPF13](https://github.com/spf13/spf13-vim) or [Janus](https://github.com/carlhuda/janus). Those projects also provide collections of plugins and mappings for vim only that work well together. In my experience they tend to be slow, turn on a glut of unwanted features, and alter the vim ecosystem such that *when* something goes wrong, it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning and configuring them one-by-one. It's a great way to learn.
 
 If you want to do the same, this is for you.
 
