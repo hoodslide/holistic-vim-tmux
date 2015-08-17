@@ -60,26 +60,48 @@ Colors look stoopid? vim/tmux support 256 colors, but your terminal may not be c
 
 ### Plugins
 
-Here's a very brief tour of the plugins being used. Again, turn off anything you don't want, need or understand yet via the vimrc.plugins and vimrc.keymap files. Most plugins, you can type `:help *plugin_name*`, or go to the project's Github page to browse the README, wiki, and plugin source.
+Here's a very brief tour of the plugins being used. Again, turn off anything you don't want, need or understand yet via the vimrc.plugins and vimrc.keymap files. Most plugins, you can type `:help PLUGIN_NAME`, or go to the project's Github page to browse the README, wiki, and plugin source.
 
-vim care & feeding:
+**Vim care & feeding**:
 * [Vundle.vim](https://github.com/gmarik/Vundle.vim) - Package manager
 * [vim-airline](https://github.com/bling/vim-airline) - Sexy status line for vim
 * [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) - Set tmux status line to match look and feel of your vim-airline config
 * [vim-colorschemes](https://github.com/flazz/vim-colorschemes) - Lots. Here's a handy [color chart](http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg) if you want to tweak further.
 * [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
 
-Navigation:
+**Window management**:
+* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
+* [vim-maximizer.git](https://github.com/szw/vim-maximizer.git) - Toggle maximizing the current split-window
+
+**Source Control**:
+* [vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
+
+**Editing**:
+* [vim-surround](https://github.com/tpope/vim-surround)
+* [HTML-AutoCloseTag](https://github.com/amirh/HTML-AutoCloseTag) - "Automatically closes HTML tags once you finish typing them."
+* [vim-commentary](https://github.com/tpope/vim-commentary) - Comment out code
+* [vim-repeat](https://github.com/tpope/vim-repeat)
+
+**Navigation**:
 * [nerdtree](https://github.com/scrooloose/nerdtree) - tree explorer
 * [taglist.vim](https://github.com/vim-scripts/taglist.vim) - "groups and displays the functions, classes, structures, enumerations, macro definitions and other parts of a source code file in a Vim window. The taglist plugin will automatically highlight the current tag. You can jump to the definition of a tag by selecting the tag name from the taglist window."
 * [MatchTag](https://github.com/gregsexton/MatchTag) - Use '%' to match HTML elements
 * [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
 
-Searching:
+**Searching**:
 * [ag.vim](https://github.com/rking/ag.vim) - "Ag can be used as a replacement for 153% of the uses of ack. You have to first [install ag](https://github.com/ggreer/the_silver_searcher) itself."
 * [nerdtree-ag](https://github.com/taiansu/nerdtree-ag) - Ag searching from NerdTree
 
-Syntax checking and highlighting:
+**Ruby/Rails**:
+* [vim-rails](https://github.com/tpope/vim-rails) - swiss army chainsaw
+* [vim-rubytest](https://github.com/janx/vim-rubytest) - kick off tests from within vim
+
+**Documentation**:
+* [dash.vim](https://github.com/rizzatti/dash.vim) - "Dash stores snippets of code and instantly searches offline documentation sets for 150+ APIs"
+
+**Syntax checking and highlighting**:
 * [syntastic](https://github.com/scrooloose/syntastic) - "runs files through external syntax checkers and displays any resulting errors to the user"
 * [nginx-vim-syntax](https://github.com/evanmiller/nginx-vim-syntax)
 * [vim-less](https://github.com/groenewege/vim-less)
@@ -93,28 +115,6 @@ Syntax checking and highlighting:
 * [puppet-syntax-vim](https://github.com/puppetlabs/puppet-syntax-vim)
 * [vim-haml](https://github.com/tpope/vim-haml)
 * [vim-markdown](https://github.com/tpope/vim-markdown)
-
-Ruby/Rails:
-* [vim-rails](https://github.com/tpope/vim-rails) - swiss army chainsaw
-* [vim-rubytest](https://github.com/janx/vim-rubytest)
-
-Window management:
-* [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Manage tabs and buffers the *right* way, save and restore workspaces, CTRL-P/Cmd-T style fuzzy search.
-* [vim-maximizer.git](https://github.com/szw/vim-maximizer.git) - Toggle maximizing the current split-window
-
-Source Control:
-* [vim-fugitive](https://github.com/tpope/vim-fugitive)
-* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-
-Editing:
-* [vim-surround](https://github.com/tpope/vim-surround)
-* [HTML-AutoCloseTag](https://github.com/amirh/HTML-AutoCloseTag) - "Automatically closes HTML tags once you finish typing them."
-* [vim-commentary](https://github.com/tpope/vim-commentary) - Comment out code
-* [vim-repeat](https://github.com/tpope/vim-repeat)
-
-Documentation:
-* [dash.vim](https://github.com/rizzatti/dash.vim)
 
 CtrlSpace was listed 3 times. It does the work of several plugins, and makes managing tabs and buffers just as natural as with any GUI editor. In addition it has a great fuzzy file search built it. (CtrlP is the de-facto fuzzy search, but the one included with CtrlSpace is tightly integrated with its other features). It's well worth picking up.
 
