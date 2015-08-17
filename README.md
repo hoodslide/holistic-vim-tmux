@@ -4,11 +4,9 @@ Chances are if you're here, you already know the advantages of using tmux: you c
 
 Of course this requires console-mode vim (or emacs, or pico, or...). For those coming from MacVim or gvim, that means giving up GUI menus, some of your favorite key-bindings (ANSI terminals don't know WTF a Cmd key is), and learning to live with 256 colors. It's worth it.
 
-vim and tmux share a number of concepts, but frustratingly different terminology: tabs, panes, windows, sessions, buffers... worse, the key-bindings to manage these are very different out of the box. This project aims to add some predictability to the key-bindings between vim, tmux, and even some plugins.
+vim and tmux share a number of concepts, but frustratingly different terminology: tabs, panes, windows, sessions, buffers... worse, the key-bindings to manage these are very different out of the box. These vim/tmux config files aim to add some predictability to the key-bindings between vim, tmux, and even some plugins.
 
-#### Philosophy
-
-Projects such as [SPF13](https://github.com/spf13/spf13-vim) and [Janus](https://github.com/carlhuda/janus) provide a collection of plugins and mappings for vim that work well together, but (for me anyway) tend to be slow, turn on a glut of unwanted features, and *when* something goes wrong it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning and configuring them one-by-one. It's a great way to learn.
+These are just simple config files, not a massive project such as [SPF13](https://github.com/spf13/spf13-vim) or [Janus](https://github.com/carlhuda/janus). Those project provide collections of plugins and mappings for vim that work well together, but (for me anyway) tend to be slow, turn on a glut of unwanted features, and *when* something goes wrong it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning and configuring them one-by-one. It's a great way to learn.
 
 If you want to do the same, this is for you.
 
