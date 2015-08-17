@@ -38,7 +38,8 @@ endif
 
 set background=dark
 
-colorscheme railscasts
+" The tweaked version does not set a bg, so your console bg is used
+colorscheme railscasts_tweaked
   set colorcolumn=0  " margin nag
   " hi Normal ctermbg=016
 

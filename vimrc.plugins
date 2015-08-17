@@ -8,8 +8,10 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
+" TODO: For later:
+" Plugin 'tpope/vim-unimpaired'
 
-Plugin 'taglist.vim'
+Plugin 'vim-scripts/taglist.vim'
   let Tlist_WinWidth = 30
   let Tlist_Use_Right_Window = 1
   let Tlist_Exit_OnlyWindow = 1
@@ -40,7 +42,7 @@ Plugin 'edkolev/tmuxline.vim'
       \'options' : {'status-justify' : 'left'}}
 
 Plugin 'gregsexton/MatchTag'
-Plugin 'matchit.zip'
+Plugin 'vim-scripts/matchit.zip'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
