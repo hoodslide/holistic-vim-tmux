@@ -48,10 +48,11 @@ That's courtesy of the [Airline](https://github.com/bling/vim-airline) and [Tmux
 
 Colors look stoopid? vim/tmux support 256 colors, but your terminal may not be configured to display them properly. Try this:
 
-* Add an alias to your shell's startup script. Weirdly, just setting `export TERM=...` before calling tmux, or setting utf8 from within the tmux.conf rather than passing in `-u`, was *not* sufficient to enable 256 colors for me consistently across various terminal clients.
-  ```
-  alias tmux='TERM=screen-256color-bce tmux -u'
-  ```
+Add an alias to your shell's startup script:
+
+```alias tmux='TERM=screen-256color-bce tmux -u'```
+
+Weirdly, just setting `export TERM=...` before calling tmux, or setting utf8 from within the tmux.conf rather than passing in `-u`, was *not* sufficient to enable 256 colors consistently across various terminal clients.
 * If you're using iTerm2, edit your profile, and under the [Terminal] tab, set the Report Terminal Type option to `xterm-256color`
 * On an iPad, [vSSH](http://www.velestar.com/Pages/VSSHIOSPage.aspx) is a great choice. It even supports mouse mode, if you want easy scrolling and the ability to drag-resize tmux and vim panes. Again, you'll need to set the "Terminal type" to `xterm-256color` in the advanced section at the bottom. Sadly, no support for Powerline fonts yet, though the developers are "considering it."
 * Windows users, try Putty
@@ -74,21 +75,21 @@ Here's the plugins being used. Again, turn off anything you don't want, need or 
 * [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Allow each tab to manage its own unique set of buffers; shortcuts for quickly renaming and moving tabs.
 * [vim-maximizer.git](https://github.com/szw/vim-maximizer.git) - Toggle maximizing the current split-window
 
-**Source Control**:
-* [vim-fugitive](https://github.com/tpope/vim-fugitive)
-* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-
 **Editing**:
-* [vim-surround](https://github.com/tpope/vim-surround)
-* [HTML-AutoCloseTag](https://github.com/amirh/HTML-AutoCloseTag) - "Automatically closes HTML tags once you finish typing them."
 * [vim-commentary](https://github.com/tpope/vim-commentary) - Comment out code
-* [vim-repeat](https://github.com/tpope/vim-repeat)
+* [vim-surround](https://github.com/tpope/vim-surround) - Surround code with things and stuff
+* [HTML-AutoCloseTag](https://github.com/amirh/HTML-AutoCloseTag) - "Automatically closes HTML tags once you finish typing"
+* [vim-repeat](https://github.com/tpope/vim-repeat) - Extend the vim "repeat" functionality ('.') to supported plugins
 
 **Navigation**:
-* [nerdtree](https://github.com/scrooloose/nerdtree) - tree explorer
-* [taglist.vim](https://github.com/vim-scripts/taglist.vim) - "groups and displays the functions, classes, structures, enumerations, macro definitions and other parts of a source code file in a Vim window. The taglist plugin will automatically highlight the current tag. You can jump to the definition of a tag by selecting the tag name from the taglist window."
-* [MatchTag](https://github.com/gregsexton/MatchTag) - Use '%' to match HTML elements
+* [nerdtree](https://github.com/scrooloose/nerdtree) - tree explorer extraordinaire
+* [taglist.vim](https://github.com/vim-scripts/taglist.vim) - "groups and displays the functions, classes, structures, enumerations, macro definitions and other parts of a source code file in a Vim window."
+* [MatchTag](https://github.com/gregsexton/MatchTag) - Use '%' to also match HTML elements
+
+**Source Control**:
+* [vim-fugitive](https://github.com/tpope/vim-fugitive) - Above average perfectly legal Git integration
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Show uncommited changes you've made within the current file
+* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) - Show changes to files in the tree explorer
 
 **Searching**:
 * [ag.vim](https://github.com/rking/ag.vim) - "Ag can be used as a replacement for 153% of the uses of ack. You have to first [install ag](https://github.com/ggreer/the_silver_searcher) itself."
