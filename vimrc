@@ -7,29 +7,12 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 augroup END
-
 " set nocursorline
+"
 set number
 
-" http://usevim.com/2012/05/16/mouse/
 set mouse=a
 set ttymouse=xterm2
-
-" Turn off middle-click paste for Thinkpad nipple scrolling: https://blog.teknik.io/tso/64
-noremap <­MiddleMouse­> ""
-noremap! <­MiddleMouse­> <Esc>
-noremap <2-MiddleMouse> ""
-noremap! <2-MiddleMouse> <Esc>
-noremap <3-MiddleMouse> ""
-noremap! <3-MiddleMouse> <Esc>
-noremap <4-MiddleMouse> ""
-noremap! <4-MiddleMouse> <Esc>
-
-" scroll 2 lines at a time, instead of 3
-nnoremap <ScrollWheelUp> <C-Y>
-nnoremap <ScrollWheelDown> <C-E>
-" inoremap <ScrollWheelUp> 2<C-Y>
-" inoremap <ScrollWheelDown> 2<C-E>
 
 set ai nolist nowrapscan ignorecase wrap
 set softtabstop=2 tabstop=2 expandtab shiftwidth=2
@@ -114,12 +97,6 @@ set noswapfile
 " Disable Ex mode
 map Q <ESC>
 
-" Allow powerline fonts
-let g:airline_powerline_fonts = 1
-
-" Do syntax check when the buffer is first loaded
-let g:syntastic_check_on_open=1
-
 " Don't overindent javascript
 let g:SimpleJsIndenter_BriefMode=1
 
@@ -128,30 +105,9 @@ let g:netrw_list_hide='.DS_Store,^\.git/$'
 
 " Start neocompletecache automatically
 let g:neocomplcache_enable_at_startup = 1
-
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-" ag is fast enough that CtrlP doesn't need to cache
-  " let g:ctrlp_use_caching = 0
-endif
-
 autocmd QuickFixCmdPost *grep* cwindow
 
-" Syntastic shouldn't bother with HTML files
-let g:syntastic_ignore_files=['.html$']
-
-" Automatically format saved go files
-autocmd FileType go autocmd BufWritePre <buffer> Fmt"
-
-" NOT!!! Automatically open the error list when errors are detected
-let g:syntastic_auto_loc_list=0
-
-" Trailing whitespace sucks
+" Strip trailing whitespace on save
   function! <SID>StripTrailingWhitespaces()
       let l = line(".")
       let c = col(".")

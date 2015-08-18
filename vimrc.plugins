@@ -21,14 +21,13 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'amirh/HTML-AutoCloseTag'
 
 Plugin 'bling/vim-airline'
-  " let g:airline#extensions#branch#enabled = 0
+  let g:airline_powerline_fonts = 1
   let g:airline#extensions#branch#displayed_head_limit = 10
+  " let g:airline#extensions#branch#enabled = 0   " Don't display branch
   let g:airline_section_y = ''
   let g:airline_theme = 'wombat'
   " Show buffers in tabline when only 1 tab. Problematic.
   " let g:airline#extensions#tabline#enabled = 1
-
-
 
 Plugin 'edkolev/tmuxline.vim'
   " \'w'    : '#(git branch | cut -f2 -d" " | head -1)',
@@ -41,12 +40,18 @@ Plugin 'edkolev/tmuxline.vim'
       \'z'    : '#h',
       \'options' : {'status-justify' : 'left'}}
 
-Plugin 'gregsexton/MatchTag'
-Plugin 'vim-scripts/matchit.zip'
 Plugin 'rking/ag.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'taiansu/nerdtree-ag'
+
+Plugin 'scrooloose/syntastic'
+  let g:syntastic_check_on_open=1
+  let g:syntastic_ignore_files=['.html$']
+  let g:syntastic_auto_loc_list=0  " Do NOT auto-open error list
+
+Plugin 'gregsexton/MatchTag'
+" Plugin 'vim-scripts/matchit.zip'
+
 
 Plugin 'szw/vim-ctrlspace'
   let g:ctrlspace_load_last_workspace_on_start = 1
@@ -56,8 +61,9 @@ Plugin 'szw/vim-ctrlspace'
   let g:airline_exclude_preview = 1
   if executable("ag")
     let g:ctrlspace_glob_command = 'ag -l --nocolor -g ""'
+    set grepprg=ag\ --nogroup\ --nocolor
+    " let g:ctrlspace_ignored_files = '\v(tmp|temp)[\/]'
   endif
-  " let g:ctrlspace_ignored_files = '\v(tmp|temp)[\/]'
 
 Plugin 'szw/vim-maximizer.git'
 Plugin 'tpope/vim-commentary'

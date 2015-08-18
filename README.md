@@ -210,7 +210,6 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 | Clear Scrollback Buffer        | C-\ k (a la Cmd-k in iTerm2) |
 | Reload config files            | C-\ r                        | :so ~/.vimrc |
 | Show Help                      | C-\ ?                        | :help ... | ?             | ? |
-| Remove all trailing whitespace |                              | gz        |
 
 
 #### Out-of-the-box vim
