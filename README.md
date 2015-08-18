@@ -1,12 +1,18 @@
 ## Holistic vim + tmux
 
+<div style="float: right; background-color: #EFF; width: 10%;">
+#### Scroll to:
+[Plugins](#user-content-plugins)
+[Key Bindings](#user-content-key-bindings)
+</div>
+
 Chances are if you're here, you already know the advantages of using tmux: you can leave your computer at work, and with a little SSH-fu pick up exactly where you left off, whether from home or from a tablet in a coffee shop. Remote pairing is as easy as having someone else connect to your tmux session.
 
 Of course this requires console-mode vim (or [emacs](http://mrozekma.com/editor-learning-curve.png), or...) For those coming from MacVim or gvim, that means giving up GUI menus, some of your favorite key-bindings (ANSI terminals don't know WTF a Cmd key is), and learning to live with 256 colors. It's worth it.
 
 vim and tmux share a number of concepts, but frustratingly different terminology: tabs, panes, windows, sessions, buffers... worse, the key-bindings to manage these are very different out of the box. These vim/tmux config files aim to add some predictability to the key-bindings between vim, tmux, and even some plugins.
 
-These are just simple config files, not a massive project such as [SPF13](https://github.com/spf13/spf13-vim) or [Janus](https://github.com/carlhuda/janus). Those projects also provide collections of plugins and mappings for vim only that work well together. In my experience they tend to be slow, turn on a glut of unwanted features, and alter the vim ecosystem such that *when* something goes wrong, it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning and configuring them one-by-one. It's a great way to learn.
+These are just simple config files, not a massive project such as [SPF13](https://github.com/spf13/spf13-vim) or [Janus](https://github.com/carlhuda/janus). Those projects also provide collections of plugins and mappings (for vim only) that work well together. In my experience they tend to be slow, turn on a glut of unwanted features, and alter the vim ecosystem such that *when* something goes wrong, it's not obvious where to look. Like many vim users, I started over with just a package manager, then added plugins as I needed them. It's a growing list, but at least it means I'm learning and configuring them one-by-one. It's a great way to learn.
 
 If you want to do the same, this is for you.
 
@@ -132,14 +138,14 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 |                      | **tmux**  | **vim**            | **CtrlSpace** | **NerdTree** |
 | --------             |:-------   |:-------            |:------------- |:-------------|
 | New tab              | C-\ t     | \ t                |
-| Open file in new tab |           | :tabedit file.txt  | t             | t             |
-| Rename tab           | C-\ =     | \ =                | =             |
-| Close tab            | C-\ c     | \c                 | C (also clean stale buffers) |
+| Toggle last tab      | C-\ C-\   | \ \                |
+| Switch to n-th tab   | C-\ [1-9] | \ [1-9]            |
 | Switch to prev tab   | C-\ [     | C-TAB              | [             |
 | Switch to next tab   | C-\ ]     | TAB                | ]             |
-| Switch to n-th tab   | C-\ [1-9] | \ [1-9]            |
-| Toggle last tab      | C-\ C-\   | \ \                |
+| Open file in new tab |           | :tabedit file.txt  | t             | t             |
 | Move tab left/right  | C-\ -/+   |                    | -/+           |
+| Rename tab           | C-\ =     | \ =                | =             |
+| Close tab            | C-\ c     | \c                 | C (also closes unattached buffers) |
 | Show tab list        |           | :tabs              | L             |
 
 
@@ -147,16 +153,16 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 
 |                                | **tmux**  | **vim**   | **CtrlSpace** | **NerdTree** |
 | --------                       |:-------   |:-------   |:------------- |:-------------|
-| Split pane vertically          | C-\ v     | C-W v     |               |
-| Split pane horizontally        | C-\ s     | C-W s     |               |
+| Split pane vertically          | C-\ v     | C-w v     |               |
+| Split pane horizontally        | C-\ s     | C-w s     |               |
 | Open file in v-split pane      |           |           | v             | s (boo...)   |
 | Open file in h-split pane      |           |           | s             | i (boo...)   |
-| Toggle maximize pane           | C-\ e     | C-W e     |
+| Toggle maximize pane           | C-\ e     | C-w e     |
 | Switch to pane on the left     | C-\ h     | C-h       |
 | Switch to pane on the right    | C-\ l     | C-l       |
 | Switch to pane above           | C-\ k     | C-k       |
 | Switch to pane berow           | C-\ j     | C-j       |
-| Toggle between panes           | C-\ p     | C-W p     |
+| Toggle between panes           | C-\ p     | C-w p     |
 
 
 #### Plugins
@@ -205,9 +211,14 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 
 |                                | **tmux**                     | **vim**   | **CtrlSpace** | **NerdTree** |
 | --------                       |:-------                      |:-------   |:------------- |:-------------|
-| Split window vertically        | C-\ v                        | C-W v     |               |
 | Clear Scrollback Buffer        | C-\ k (a la Cmd-k in iTerm2) |
 | Reload config files            | C-\ r                        | :so ~/.vimrc |
 | Show Help                      | C-\ ?                        | :help ... | ?             | ? |
-| Remove all trailing whitespace |                              | gz |
+| Remove all trailing whitespace |                              | gz        |
+
+
+#### Out-of-the-box vim
+
+|                                | **vim**   |
+| --------                       |:-------   |
 
