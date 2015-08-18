@@ -1,10 +1,6 @@
 ## Holistic vim + tmux
 
-<div style="float: right; background-color: #EFF; width: 10%;">
-#### Scroll to:
-[Plugins](#user-content-plugins)
-[Key Bindings](#user-content-key-bindings)
-</div>
+*Jump to:* [Plugins](#plugins), [Key Bindings](#key-bindings)
 
 Chances are if you're here, you already know the advantages of using tmux: you can leave your computer at work, and with a little SSH-fu pick up exactly where you left off, whether from home or from a tablet in a coffee shop. Remote pairing is as easy as having someone else connect to your tmux session.
 
