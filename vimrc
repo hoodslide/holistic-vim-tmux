@@ -88,7 +88,7 @@ set noincsearch
 " Visually display matching braces
 set showmatch
 
-set textwidth=90
+set textwidth=120
 set formatoptions=qrn1
 
 set nobackup

@@ -46,18 +46,23 @@ That's courtesy of the [Airline](https://github.com/bling/vim-airline) and [Tmux
 
 ![status line](https://raw.githubusercontent.com/hoodslide/holistic-vim-tmux/master/assets/statusline.jpg)
 
-#### Adding 256 color support
+#### Enabling 256 color support
 
-Colors look stoopid? vim/tmux support 256 colors, but your terminal may not be configured to display them properly. Try this:
+Colors look stoopid? vim/tmux supports 256 colors, but not out of the box. Here's what worked for me after several failed attempts.
 
-Add an alias to your shell's startup script:
+First, add an alias to your shell's startup script. Weirdly, just setting `export TERM=...`, or setting utf8 from within the tmux.conf rather than passing in `-u`, was *not* sufficient to enable 256 colors consistently across terminal clients.
 
-```alias tmux='TERM=screen-256color-bce tmux -u'```
+```
+# ~/.bash_profile
 
-Weirdly, just setting `export TERM=...` before calling tmux, or setting utf8 from within the tmux.conf rather than passing in `-u`, was *not* sufficient to enable 256 colors consistently across various terminal clients.
+alias tmux='TERM=screen-256color-bce tmux -u'
+```
+
+Next, tell your Terminal program it's ok to process the color codes sent by vim/tmux:
+
 * If you're using iTerm2, edit your profile, and under the [Terminal] tab, set the Report Terminal Type option to `xterm-256color`
 * On an iPad, [vSSH](http://www.velestar.com/Pages/VSSHIOSPage.aspx) is a great choice. It even supports mouse mode, if you want easy scrolling and the ability to drag-resize tmux and vim panes. Again, you'll need to set the "Terminal type" to `xterm-256color` in the advanced section at the bottom. Sadly, no support for Powerline fonts yet, though the developers are "considering it."
-* Windows users, try Putty
+* Windows users, try Putty, setting the terminal type to 'putty-256color' as per [this](http://vim.wikia.com/wiki/256_colors_in_vim)
 * Linux users probably already have a system  ;)
 
 Once done, you'll need to completely quit and restart tmux (you can't just detach or reload the config). Ensure the alias is set before restarting:
@@ -70,10 +75,10 @@ tmux new -s PROJECT-NAME
 Here's the plugins being used. Again, turn off anything you don't want, need or understand yet via the vimrc.plugins and vimrc.keymap files. Most plugins, you can type `:help PLUGIN_NAME`, or go to the project's Github page to browse the README, wiki, and plugin source.
 
 **Vim care & feeding**:
-* [Vundle.vim](https://github.com/gmarik/Vundle.vim) - Package manager
+* [Vundle.vim](https://github.com/gmarik/Vundle.vim) - Package manager. `:help vundle` is brief but good.
 * [vim-airline](https://github.com/bling/vim-airline) - Sexy status line for vim
 * [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) - Set tmux status line to match look and feel of your vim-airline config
-* [vim-colorschemes](https://github.com/flazz/vim-colorschemes) - Lots of themes to play with. Here's a [color chart](http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg) if you want to tweak further.
+* [vim-colorschemes](https://github.com/flazz/vim-colorschemes) - Lots of color schemes to play with. Here's a [color chart](http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg) if you want to tweak further.
 * [vim-ctrlspace](https://github.com/szw/vim-ctrlspace) - Save and restore workspaces, preserving all of your tabs, panes and buffers. Yes!
 
 **Window management**:
