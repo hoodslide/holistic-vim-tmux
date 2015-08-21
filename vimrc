@@ -2,12 +2,12 @@
 "
 " Only show cursorline for current window
 " TURNED OFF until it's usable for bright color scheme
-augroup CursorLine
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
-augroup END
-" set nocursorline
+" augroup CursorLine
+"   au!
+"   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+"   au WinLeave * setlocal nocursorline
+" augroup END
+set nocursorline
 "
 set number
 
