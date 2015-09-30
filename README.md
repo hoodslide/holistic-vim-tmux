@@ -216,9 +216,3 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 | Reload config files            | C-\ r                        | :so ~/.vimrc |
 | Show Help                      | C-\ ?                        | :help ... | ?             | ? |
 
-
-#### Out-of-the-box vim
-
-|                                | **vim**   |
-| --------                       |:-------   |
-
