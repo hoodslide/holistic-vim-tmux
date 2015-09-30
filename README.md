@@ -170,14 +170,14 @@ CtrlSpace was listed 3 times because it does the work of several plugins, and ma
 
 | NerdTree                       | Keys             |
 | --------                       |:-------          |
-| Open NerdTree File Explorer    | \n *or* F2       |
+| Toggle NerdTree File Explorer  | \n *or* F2       |
 | Show current file in NerdTree  | \N               |
 
 | TagList                        | Keys             |
 | --------                       |:-------          |
 | Show file structure            | \m *or* F4       |
 
-| Dash Docs                      | Keys             |
+| [Dash Docs](https://kapeli.com/dash)              | Keys             |
 | --------                       |:-------          |
 | Show docs for cursor word      | \ d |
 | Show docs, all docsets         | \ D |
