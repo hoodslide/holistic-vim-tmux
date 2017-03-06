@@ -112,6 +112,8 @@ let mapleader = '\'
   " Turn off highlighting
   nnoremap <silent><LEADER># :set nohls<CR>
 
+" Jump to rspec:
+" :Eunittest  (via vim-rails)
 
 " ====== Mouse ======
   " Turn off middle-click paste for Thinkpad nipple scrolling: https://blog.teknik.io/tso/64

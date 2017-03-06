@@ -8,7 +8,7 @@
 "   au WinLeave * setlocal nocursorline
 " augroup END
 set nocursorline
-"
+
 set number
 
 set mouse=a

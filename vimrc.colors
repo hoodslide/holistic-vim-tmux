@@ -40,25 +40,25 @@ endif
 set colorcolumn=0  " margin nag
 " The tweaked version does not set a bg, so your console bg is used
 " colorscheme railscasts_tweaked
-  " set background=dark
-  " hi Normal ctermbg=016
+"   set background=dark
+"   hi Normal ctermbg=016
 
-  " hi ColorColumn ctermbg=16
-  " hi CursorLine cterm=NONE ctermbg=16
-  " hi StatusLine ctermbg=18 ctermfg=16
-  " hi LineNr ctermfg=236
-  " hi VertSplit ctermbg=234 ctermfg=234
-  " hi Search ctermbg=052
+"   hi ColorColumn ctermbg=16
+"   hi CursorLine cterm=NONE ctermbg=16
+"   hi StatusLine ctermbg=18 ctermfg=16
+"   hi LineNr ctermfg=236
+"   hi VertSplit ctermbg=234 ctermfg=234
+"   hi Search ctermbg=052
 
-  " hi Pmenu ctermbg=019 ctermfg=015      " C-n / C-p
-  " hi PmenuSel ctermbg=017 ctermfg=015
+"   hi Pmenu ctermbg=019 ctermfg=015      " C-n / C-p
+"   hi PmenuSel ctermbg=017 ctermfg=015
 
-  " hi Visual ctermbg=130 ctermfg=16      " selected text
+"   hi Visual ctermbg=130 ctermfg=16      " selected text
 
-  " hi TabLineFill ctermfg=234 ctermbg=White
-  " hi TabLine ctermfg=248 ctermbg=234
-  " hi TabLineSel cterm=NONE ctermbg=237 ctermfg=192
+"   hi TabLineFill ctermfg=234 ctermbg=White
+"   hi TabLine ctermfg=248 ctermbg=234
+"   hi TabLineSel cterm=NONE ctermbg=237 ctermfg=192
 
 colorscheme github
   " hi CursorLine cterm=NONE ctermbg=015
-  hi Normal ctermbg=015
+ hi Normal ctermbg=015
