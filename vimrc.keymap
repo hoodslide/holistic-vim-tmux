@@ -94,7 +94,8 @@ let mapleader = '\'
   nnoremap <LEADER>= :CtrlSpace =<CR>
 
 " Search using Ctrl+P courtesy awesome CtrlSpace plugin
-  nnoremap <silent><C-P> :CtrlSpace o/<CR>
+"             now broken  :(
+"  nnoremap <silent><C-P> :CtrlSpace o/<CR>
   " ...and a tab list via :CtrlSpace l
 
 " Maximize window. <F3> also works.

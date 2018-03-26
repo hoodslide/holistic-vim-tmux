@@ -36,6 +36,30 @@ if you aren't so clever just get all the files in `colors/*.vim` into
 
     # after downloading; unpacking; cd'ing
     cp colors/* ~/.vim/colors
+    
+Using
+-----
+
+To change the colorscheme of Vim, add to your `.vimrc`:
+
+    colorscheme nameofcolorscheme
+    
+For example, to change the color scheme to wombat:
+    
+    colorscheme wombat
+    
+To change to Molokai:
+
+    colorscheme molokai
+    
+Inside Vim, you use:
+    
+    :colorscheme molokai
+
+Previewing colorschemes
+-----------------------
+There are quite a few colorschemes in this. To preview them on your live code inside of Vim, checkout [this page from the vim wikia](http://vim.wikia.com/wiki/Switch_color_schemes) and [this repo for easy installation](https://github.com/felixhummel/setcolors.vim).
+
 
 Something missing? Fork!
 ------------------------

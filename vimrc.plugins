@@ -44,10 +44,23 @@ Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'taiansu/nerdtree-ag'
 
+Plugin 'leafgarland/typescript-vim'
+  au BufRead,BufNewFile *.ts setfiletype typescript
+
 Plugin 'scrooloose/syntastic'
   let g:syntastic_check_on_open=1
   let g:syntastic_ignore_files=['.html$']
   let g:syntastic_auto_loc_list=0  " Do NOT auto-open error list
+  " https://thebluber.wordpress.com/2014/04/19/configure-vim-for-basic-coding-in-java/
+  " let g:syntastic_java_checker = 'javac'
+  let g:syntastic_java_javac_classpath = "./lib/*.jar"
+
+Plugin 'Scuilion/gradle-syntastic-plugin'
+  " https://github.com/Scuilion/gradle-syntastic-plugin
+  " also, add to your gradle.build:
+  "   plugins { id "com.scuilion.syntastic" version "0.3.8" }
+  let g:syntastic_java_checkers=['javac']
+  let g:syntastic_java_javac_config_file_enabled = 1
 
 Plugin 'gregsexton/MatchTag'
 " Plugin 'vim-scripts/matchit.zip'
@@ -64,6 +77,9 @@ Plugin 'szw/vim-ctrlspace'
     set grepprg=ag\ --nogroup\ --nocolor
     " let g:ctrlspace_ignored_files = '\v(tmp|temp)[\/]'
   endif
+
+Plugin 'ctrlp/ctrlp.git'
+  set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 Plugin 'szw/vim-maximizer.git'
 Plugin 'tpope/vim-commentary'

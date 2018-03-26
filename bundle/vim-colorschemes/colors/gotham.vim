@@ -137,6 +137,9 @@ call s:Col('PreProc', 'red')
 " Tildes on the bottom of the page.
 call s:Col('NonText', 'base4')
 
+" Concealed stuff.
+call s:Col('Conceal', 'cyan', s:background)
+
 " TODO and similar tags.
 call s:Col('Todo', 'magenta', s:background)
 
@@ -148,7 +151,7 @@ call s:Col('StatusLineNC', 'base4', 'base2')
 call s:Col('MatchParen', 'base1', 'orange')
 
 " Special keys, e.g. some of the chars in 'listchars'. See ':h listchars'.
-call s:Col('SpecialKey', 'base4')
+call s:Col('SpecialKey', 'base3')
 
 " Folds.
 call s:Col('Folded', 'base6', 'blue')
@@ -192,6 +195,10 @@ call s:Col('DiffAdd', 'base7', 'green')
 call s:Col('DiffChange', 'base7', 'blue')
 call s:Col('DiffDelete', 'base7', 'red')
 call s:Col('DiffText', 'base7', 'cyan')
+call s:Col('DiffAdded', 'green')
+call s:Col('DiffChanged', 'blue')
+call s:Col('DiffRemoved', 'red')
+call s:Col('DiffSubname', 'base4')
 
 " Directories (e.g. netrw).
 call s:Col('Directory', 'cyan')
@@ -207,6 +214,9 @@ call s:Col('rubyStringDelimiter', 'green')
 call s:Col('htmlArg', 'blue')
 call s:Col('htmlItalic', 'magenta')
 call s:Col('htmlBold', 'cyan', '')
+
+" Python                                                                                                                   
+call s:Col('pythonStatement', 'blue')
 
 
 " Plugin =======================================================================
@@ -224,6 +234,9 @@ call s:Col('CtrlPPrtBase', 'base4')             " '>>>' prompt
 call s:Col('CtrlPPrtText', 'cyan')              " text in the prompt
 call s:Col('CtrlPPtrCursor', 'base7')           " cursor in the prompt
 
+" unite.vim
+call s:Col('UniteGrep', 'base7', 'green')
+let g:unite_source_grep_search_word_highlight = 'UniteGrep'
 
 
 " Cleanup =====================================================================

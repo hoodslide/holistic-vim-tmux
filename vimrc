@@ -7,9 +7,9 @@
 "   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
 "   au WinLeave * setlocal nocursorline
 " augroup END
-set nocursorline
+" set nocursorline
 
-set number
+set nonumber
 
 set mouse=a
 set ttymouse=xterm2
@@ -23,7 +23,7 @@ set softtabstop=2 tabstop=2 expandtab shiftwidth=2
 " Performance - Don't do syntax hl parsing for super long lines
 set synmaxcol=200
 
-set tags=./.git/tags,~/ln/gems/tags;
+" set tags=./tags,./.git/tags,~/ln/gig/tags;
 
 " Need to call on initially to support git
 filetype on
@@ -32,7 +32,7 @@ set nocompatible
 
 set shell=/bin/bash
 set modelines=0
-set spell spelllang=en_us
+set nospell spelllang=en_us
 set autoread
 syntax enable
 
