@@ -18,16 +18,25 @@ Plugin 'vim-scripts/taglist.vim'
   let Tlist_Auto_Open = 0
   let Tlist_Show_One_File = 0
 
-Plugin 'amirh/HTML-AutoCloseTag'
+Plugin 'alvan/vim-closetag'
 
 Plugin 'bling/vim-airline'
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#branch#displayed_head_limit = 10
   " let g:airline#extensions#branch#enabled = 0   " Don't display branch
+  " let g:airline#extensions#tabline#show_splits = 0
+
+  let g:airline#extensions#branch#displayed_head_limit = 10
+  " let g:airline#extensions#tabline#buffer_nr_show = 1
+  " let g:airline#extensions#tabline#exclude_preview = 1
+  " airline tabline broken with latest update?!
+  " let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamemod = ':t:r'
+  let g:airline#extensions#tabline#show_tabs = 1
+  let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+  let g:airline_powerline_fonts = 1
   let g:airline_section_y = ''
   let g:airline_theme = 'wombat'
-  " Show buffers in tabline when only 1 tab. Problematic.
-  " let g:airline#extensions#tabline#enabled = 1
+
+
 
 Plugin 'edkolev/tmuxline.vim'
   " \'w'    : '#(git branch | cut -f2 -d" " | head -1)',

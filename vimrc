@@ -9,7 +9,7 @@
 " augroup END
 " set nocursorline
 
-set nonumber
+set number
 
 set mouse=a
 set ttymouse=xterm2
@@ -35,6 +35,10 @@ set modelines=0
 set nospell spelllang=en_us
 set autoread
 syntax enable
+syntax on
+" ...but dissable for eruby files - argonne
+" autocmd! BufNewFile,BufRead *.erb let b:isOmitSyntax = 1
+" autocmd! BufNewFile,BufRead *     if ! exists('b:isOmitSyntax') | syntax on | endif
 
 " relative numbers (bleh!)
 " set rnu
@@ -124,3 +128,4 @@ autocmd QuickFixCmdPost    l* nested lwindow
 source ~/.vim/vimrc.plugins
 source ~/.vim/vimrc.keymap
 source ~/.vim/vimrc.colors
+source ~/.vim/setcolors.vim
