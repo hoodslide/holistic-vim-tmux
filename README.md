@@ -1,6 +1,6 @@
 ## Holistic vim + tmux
 
-TODO: yikes, this is dated. NeoVim, etc. Test.
+TODO: yikes, this is dated. NeoVim, etc. Test. Abandon.
 
 *Jump to: [Plugins](#plugins), [Key Bindings](#key-bindings)*
 
